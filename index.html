@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💝 For My Valentine</title>
+    <meta name="description" content="A special Valentine's Day invitation just for you">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <!-- Floating Hearts Background -->
+    <div class="hearts-bg" aria-hidden="true">
+        <span class="floating-heart" style="--i:0">💕</span>
+        <span class="floating-heart" style="--i:1">💗</span>
+        <span class="floating-heart" style="--i:2">💖</span>
+        <span class="floating-heart" style="--i:3">💝</span>
+        <span class="floating-heart" style="--i:4">❤️</span>
+        <span class="floating-heart" style="--i:5">💕</span>
+        <span class="floating-heart" style="--i:6">💗</span>
+        <span class="floating-heart" style="--i:7">💖</span>
+        <span class="floating-heart" style="--i:8">💝</span>
+        <span class="floating-heart" style="--i:9">❤️</span>
+        <span class="floating-heart" style="--i:10">💕</span>
+        <span class="floating-heart" style="--i:11">💗</span>
+    </div>
+
+    <div class="container">
+        <div id="mainCard" class="card">
+            <div class="sparkle-border"></div>
+            <div class="card-inner">
+                <div class="image-container">
+                    <div class="pulse-ring"></div>
+                    <img src="https://media.giphy.com/media/MeIucAjPKoA120R7sN/giphy.gif" 
+                         alt="Cute Cat Asking" 
+                         class="gif-img">
+                </div>
+
+                <h1 class="title-animate">Hui Xin 宝宝 ~ Will you be my Valentine?</h1>
+                <p class="subtitle">我的大美女小可爱 🌹</p>
+
+                <div class="button-group">
+                    <button id="yesBtn">
+                        <span class="btn-icon">💖</span>
+                        <span>Yes!</span>
+                    </button>
+                    <button id="noBtn">No 😢</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="successMessage" class="hidden">
+            <div class="success-card">
+                <h1 class="success-title">YAYYYYY 💖</h1>
+                <p class="success-subtitle">果然拒绝不了我吧~~ 🤓</p>
+                <p class="success-date">新年后见~~ 🌹</p>
+                <div class="success-img-container">
+                    <img src="https://media.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" 
+                         alt="Happy Cat Celebration" 
+                         class="success-img">
+                </div>
+                <div class="heart-trail" aria-hidden="true">
+                    <span>💕</span><span>💗</span><span>💖</span><span>💝</span><span>❤️</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
