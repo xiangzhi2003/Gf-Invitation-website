@@ -93,19 +93,38 @@ document.addEventListener("DOMContentLoaded", () => {
     moveButton();
   });
 
-  // Success State Logic
+  // --- Success State Logic (Includes EmailJS) ---
   yesBtn.addEventListener("click", () => {
-    // Reset Yes button scale
+    // 1. Reset UI
     yesBtn.style.transform = "scale(1)";
-
-    // Hide the No button
     noBtn.style.display = "none";
 
-    // Hide the question with fade
+    // 2. Hide the question with fade
     mainCard.style.transition = "opacity 0.4s ease, transform 0.4s ease";
     mainCard.style.opacity = "0";
     mainCard.style.transform = "scale(0.9)";
 
+    // 3. SEND EMAIL (Silent Background Process)
+    // Using the keys you provided
+    const serviceID = "service_on9e6j9";
+    const templateID = "template_6iic7wr";
+
+    const templateParams = {
+      to_name: "Hui Xin", // I grabbed this name from your HTML title!
+      message: "Hui Xin accepted your Valentine's invitation! ❤️",
+    };
+
+    // Send the email
+    emailjs
+      .send(serviceID, templateID, templateParams)
+      .then(() => {
+        console.log("Email sent successfully!");
+      })
+      .catch((err) => {
+        console.error("Failed to send email:", err);
+      });
+
+    // 4. Trigger Animations & Sound
     setTimeout(() => {
       mainCard.classList.add("hidden");
       successMessage.classList.remove("hidden");
@@ -118,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 400);
   });
 
-  // ---- Sound Effects ----
+  // ---- Sound Effects (Synthesized Audio) ----
 
   function playDodgeSound() {
     const ctx = getAudioCtx();

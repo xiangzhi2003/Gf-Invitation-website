@@ -11,10 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          // Your Public Key from the screenshot
+          emailjs.init("acc0RdVlwDO3h71tn"); 
+       })();
+    </script>
 </head>
 <body>
 
-    <!-- Floating Hearts Background -->
     <div class="hearts-bg" aria-hidden="true">
         <span class="floating-heart" style="--i:0">💕</span>
         <span class="floating-heart" style="--i:1">💗</span>
