@@ -107,16 +107,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. SEND EMAIL (Silent Background Process)
     const serviceID = "service_on9e6j9";
     const templateID = "template_6iic7wr";
-    const publicKey = "acc0RdVlwDO3h71tn"; // We add the key here explicitly
 
     const templateParams = {
       to_name: "Hui Xin",
       message: "Hui Xin accepted your Valentine's invitation! ❤️",
     };
 
-    // Note: We added 'publicKey' as the 4th argument to be 100% sure it works
     emailjs
-      .send(serviceID, templateID, templateParams, publicKey)
+      .send(serviceID, templateID, templateParams)
       .then(() => {
         console.log("SUCCESS! Email sent.");
       })
