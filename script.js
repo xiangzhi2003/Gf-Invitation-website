@@ -105,23 +105,23 @@ document.addEventListener("DOMContentLoaded", () => {
     mainCard.style.transform = "scale(0.9)";
 
     // 3. SEND EMAIL (Silent Background Process)
-    // Using the keys you provided
     const serviceID = "service_on9e6j9";
     const templateID = "template_6iic7wr";
+    const publicKey = "acc0RdVlwDO3h71tn"; // We add the key here explicitly
 
     const templateParams = {
-      to_name: "Hui Xin", // I grabbed this name from your HTML title!
+      to_name: "Hui Xin",
       message: "Hui Xin accepted your Valentine's invitation! ❤️",
     };
 
-    // Send the email
+    // Note: We added 'publicKey' as the 4th argument to be 100% sure it works
     emailjs
-      .send(serviceID, templateID, templateParams)
+      .send(serviceID, templateID, templateParams, publicKey)
       .then(() => {
-        console.log("Email sent successfully!");
+        console.log("SUCCESS! Email sent.");
       })
       .catch((err) => {
-        console.error("Failed to send email:", err);
+        console.error("FAILED to send email:", err);
       });
 
     // 4. Trigger Animations & Sound
